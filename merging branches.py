@@ -1,3 +1,4 @@
 #merging branches
 #offbranch
-#deleting offbranch after merging
+#deleting local offbranch after merging
+#deleting remote offbranch
