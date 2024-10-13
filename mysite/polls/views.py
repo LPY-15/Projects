@@ -5,8 +5,6 @@ from django.urls import reverse
 from .models import Question, Choice
 from django.views import generic
 from django.utils import timezone
-from django.template import loader #1
-from django.http import HttpResponse
 # Create your views here.
 
 class IndexView(generic.ListView):
