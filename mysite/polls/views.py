@@ -5,6 +5,8 @@ from django.urls import reverse
 from .models import Question, Choice
 from django.views import generic
 from django.utils import timezone
+from django.template import loader #1
+from django.http import HttpResponse
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -40,3 +42,7 @@ def vote(request, question_id):
         selected_choice.votes = F("votes") + 1
         selected_choice.save()
         return HttpResponseRedirect(reverse("polls:results", args=(question_id,)))
+    
+def main(request):
+    template = loader.get_template('main.html')
+    return HttpResponse(template.render())
